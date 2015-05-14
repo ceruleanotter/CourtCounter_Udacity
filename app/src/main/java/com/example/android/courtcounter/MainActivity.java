@@ -7,6 +7,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * This activity keeps track of the basketball score for 2 teams.
+ */
 public class MainActivity extends AppCompatActivity {
 
   // Tracks the score for Team A
@@ -35,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
 
-    //noinspection SimplifiableIfStatement
+    //noinspection SimpSlifiableIfStatement
     if (id == R.id.action_settings) {
       return true;
     }
@@ -88,6 +91,16 @@ public class MainActivity extends AppCompatActivity {
    */
   public void addThreeForTeamB(View v) {
     scoreTeamB = scoreTeamB + 3;
+    displayForTeamB(scoreTeamB);
+  }
+
+  /**
+   * Resets the score for both teams back to 0.
+   */
+  public void resetScore(View v) {
+    scoreTeamA = 0;
+    scoreTeamB = 0;
+    displayForTeamA(scoreTeamA);
     displayForTeamB(scoreTeamB);
   }
 
